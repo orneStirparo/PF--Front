@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "exp",
     "name": "PF",
     "slug": "PF",
     "version": "1.0.0",
@@ -17,9 +18,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ort.pf.grupo6"
     },
     "android": {
+      "package": "com.ort.pf.grupo6",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

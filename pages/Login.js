@@ -136,10 +136,10 @@ export default function LoginScreen({ navigation }) {
     return (
         <Loading loading={loading}>
             <ScrollView style={styles.container}>
-                <Image source={require('../assets/iconPF.png')} style={styles.logo} />
+                <Image source={require('../assets/iconEyeFit.png')} style={styles.logo} />
                 <View style={{ marginLeft: 15, marginRight: 15, marginTop: 15, backgroundColor: '#0088ff15', borderRadius: 10 }}>
                     <View style={{ alignItems: 'center', marginBottom: 10, marginTop: 5 }}>
-                        <Text style={styles.text}>Bienvenido H A N U K A</Text>
+                        <Text style={styles.text}>Bienvenido</Text>
                     </View>
 
                     {

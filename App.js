@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
 import AsyncStorage from "./utils/AsyncStorage";
 import GlobalContext from "./components/global/context";
-/* import { BottomTabNavigator, BottomTabNavigatorLogin } from './navigation/TabNavigation'; */
+import { BottomTabNavigator } from './navigation/TabNavigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { LoginStackNavigator } from "./navigation/StackNavigation";
-
 
 export default function App() {
 
@@ -37,16 +35,11 @@ export default function App() {
     }
   });
 
-  const [colorBackground, setColorBackground] = useState('#fafafa');
-  const [modalVisible, setModalVisible] = useState(false);
-
   const checkUser = async () => {
     const user = await AsyncStorage.getData('@userData');
-    //console.log(user);
     if (user) {
       setLogin(true);
       authData.iniciar(user);
-      //console.log(user);
     }
   };
 
@@ -55,7 +48,6 @@ export default function App() {
   }, []);
 
   const applyAuthentication = (user) => {
-    //console.log('Data de usuario a persistir', user);
     AsyncStorage.storeData('@userData', user);
     checkUser();
   };
@@ -72,7 +64,6 @@ export default function App() {
       groups_created: [],
       token: null,
     });
-    //setLogin(false);
   };
 
   return (
@@ -83,16 +74,10 @@ export default function App() {
             (!authData._id) ?
               <LoginStackNavigator />
               :
-              <>
-                <h1>Hola Bienvenido</h1>
-                console.log('Hola Bienvenido');
-                {/* <BottomTabNavigator /> */}
-              </>
+              <BottomTabNavigator />
           }
         </NavigationContainer>
       </SafeAreaProvider>
     </GlobalContext.Provider>
   );
 }
-
-//colorBackground, setColorBackground, modalVisible, setModalVisible

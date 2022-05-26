@@ -5,10 +5,11 @@ import { loginGoogle, login } from "../utils/api";
 import Loading from "../components/loading/Loading";
 import InpuText from "../components/TextInput/Index";
 import BtnNext from "../components/Buttom/Index";
-import * as Google from "expo-auth-session/providers/google";
+//import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
+import * as Google from 'expo-google-app-auth';
 
-WebBrowser.maybeCompleteAuthSession();
+//WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen({ navigation }) {
 
@@ -23,21 +24,36 @@ export default function LoginScreen({ navigation }) {
     const [userInfo, setUserInfo] = useState();
     const { authData, applyAuthentication } = useContext(GlobalContext);
     const [accessToken, setAccessToken] = useState();
-    const [request, response, promptAsync] = Google.useAuthRequest({
+    /* const [request, response, promptAsync] = Google.useAuthRequest({
         androidClientId: "350934348883-r4fa3j6jdvhrffqu2lc8dp0fdng84dvs.apps.googleusercontent.com",
         iosClientId: "350934348883-5uooanu5p5he0fdh6d69egovcv72glch.apps.googleusercontent.com",
         expoClientId: "350934348883-r4fa3j6jdvhrffqu2lc8dp0fdng84dvs.apps.googleusercontent.com",
-    });
+    }); */
 
     const { email, password } = loginEmail;
 
-    useEffect(() => {
+    /* useEffect(() => {
         console.log('SUCCESS', response);
         if (response?.type === "success") {
             console.log('SI O QUE??');
             setAccessToken(response.authentication.accessToken);
         }
-    }, [response]);
+    }, [response]); */
+
+    const signInWithGoogleAsync = async () => {
+        console.log('iniciamos nuestro logueo');
+        try {
+            const config = {
+                ClientId: '470761793482-f3r25b4vle8a88muoc7h4s6v45f6e06m.apps.googleusercontent.com',
+                androidClientId: '470761793482-l16dgpqj6bi7r7fq63lgeonaf58gmbu5.apps.googleusercontent.com',
+            }
+            const result = await Google.logInAsync(config);
+            console.log(result);
+            setAccessToken(result.accessToken);
+        } catch (error) {
+            console.log("Error: ", error);
+        }
+    }
 
     useEffect(async () => {
         if (accessToken) {
@@ -178,7 +194,10 @@ export default function LoginScreen({ navigation }) {
 
                 <View style={{ marginTop: 20, alignSelf: 'center', flexDirection: 'column' }}>
                     <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0088ff', alignSelf: 'center', marginBottom: 10 }}>or</Text>
-                    <TouchableOpacity onPress={() => { promptAsync({ showInRecents: true }) }}>
+                    <TouchableOpacity
+                        /* onPress={() => { promptAsync({ showInRecents: true }) }} */
+                        onPress={signInWithGoogleAsync}
+                    >
                         <Image source={require('../assets/btn_google_signin.png')} style={styles.google} />
                     </TouchableOpacity>
                 </View>

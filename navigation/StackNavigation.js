@@ -42,6 +42,14 @@ const HomeStackNavigator = () => {
             <Stack.Screen name="Notifications" component={NotificationStackScreen} options={{ headerShown: false }} />
             <Stack.Screen name="Evento" component={InfoEventStack} options={{ headerShown: false }} />
             <Stack.Screen name="Users" component={UsersStack} options={{ headerShown: false }} />
+
+            <Stack.Screen name="Mi Perfil" component={ProfileStackScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="New Group" component={CreateGroup} options={{ headerShown: false }} />
+            <Stack.Screen name="Groups" component={FollowingGroups} options={{ headerShown: false }} />
+            <Stack.Screen name="Group" component={GroupInformationStackScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Event" component={InfoEventStack} options={{ headerShown: false }} />
+            <Stack.Screen name="Nuevo Evento" component={NewEventStack} options={{ headerShown: false }} />
+            <Stack.Screen name="Admin" component={AdministratorsStack} options={{ headerShown: false }} />
         </Stack.Navigator>
     );
 };

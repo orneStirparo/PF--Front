@@ -14,8 +14,9 @@ const BottomTabNavigator = () => {
       tabBarHideOnKeyboard: true,
       tabBarActiveBackgroundColor: "#0088ff05",
     }}>
-      <Tab.Screen name="Home" component={DrawerNavigator} options={iconHome} />
+      <Tab.Screen name="Home" component={HomeStackNavigator} options={iconHome} />
       <Tab.Screen name="Search" component={SearchStackNavigator} options={iconSearch} />
+      <Tab.Screen name="Perfil" component={ProfileStackNavigator} options={iconAdmin} />
 {/*       <Tab.Screen name="Notificaciones" component={NotificationStackNavigator} options={iconMyGroups} /> */}
       {/* <Tab.Screen name="Perfil" component={DrawerNavigator} options={iconAdmin} /> */}
     </Tab.Navigator>

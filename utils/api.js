@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = 'https://teamsport.herokuapp.com/api/v1/'
+const api = 'https://teamsportdev.herokuapp.com/api/v1/'
 
 async function loginGoogle(accessToken) {
     try {

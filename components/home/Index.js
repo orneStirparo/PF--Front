@@ -61,7 +61,7 @@ export default function index({ navigation }) {
 
     return (
         <Loading loading={loading}>
-            {/* {
+            {
                 user.groups_created.length > 0 ?
                     <>
                         <HeaderAdmin navigation={navigation} title={'PF'} nameIcon={'notifications-circle-outline'} onPress={onPress} />
@@ -70,7 +70,7 @@ export default function index({ navigation }) {
                     <>
                         <HeaderUser title={'PF'} />
                     </>
-            } */}
+            }
             <ScrollView refreshControl={<RefreshControl refreshing={false} onRefresh={onRefreshData} />}>
                 {
                     (data && data.length > 0) ?

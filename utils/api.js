@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = 'https://teamsportdev.herokuapp.com/api/v1/'
+const api = 'https://sport--app.herokuapp.com/api/v1/';
 
 async function loginGoogle(accessToken) {
     try {
@@ -167,7 +167,7 @@ async function updateImageProfile(id, image, token, item) {
         const res = await axios(config);
         return res.data;
     } catch (error) {
-        console.log(error);
+        console.log(error.response);
     }
 }
 

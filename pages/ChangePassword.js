@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { generateCode, validationCode as validationC, changePassword as change } from "../utils/api";
+import { generateCode, validationCode as validationC, changePassword as changeee } from "../utils/api";
 import InpuText from "../components/TextInput/Index";
 import Loading from "../components/loading/Loading";
 import { Ionicons } from "@expo/vector-icons";
@@ -90,7 +90,7 @@ export default function ChangePassword({ navigation }) {
         if (isValidForm()) {
             try {
                 setLoading(true);
-                const response = await change(email, password, repeatPassword, code);
+                const response = await changeee(email, password, repeatPassword, code);
                 if (response && response.success) {
                     setLoading(false);
                     setPasswordChange(true);

@@ -3,6 +3,7 @@ import { updateImageProfile, updateImageGroup } from "./api.js";
 import * as ImageManipulator from "expo-image-manipulator";
 
 async function changeImageProfileUser(id, token, item) {
+    console.log('FOTO')
     try {
         let resultImage = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -12,20 +13,21 @@ async function changeImageProfileUser(id, token, item) {
         });
 
         if (!resultImage.cancelled && resultImage.type === 'image') {
-            const file = await ImageManipulator.manipulateAsync(resultImage.uri, [{ resize: { width: 500, } }], { compress: 0.5 });
+            const file = await ImageManipulator.manipulateAsync(resultImage.uri, [{ resize: { width: 500, } }], { compress: 1 });
             const result = await updateImageProfile(id, file.uri, token, item);
             if (result && result.success)
                 return result
         }
         return null;
     } catch (error) {
-        console.log(error);
+        console.log('error', error);
         throw error;
     }
 }
 
 
 async function changeImageGroup(id, token, item) {
+    console.log('ACA')
     try {
         let resultImage = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -35,8 +37,9 @@ async function changeImageGroup(id, token, item) {
         });
 
         if (!resultImage.cancelled && resultImage.type === 'image') {
-            const file = await ImageManipulator.manipulateAsync(resultImage.uri, [{ resize: { width: 500, } }], { compress: 0.5 });
+            const file = await ImageManipulator.manipulateAsync(resultImage.uri, [{ resize: { width: 500, } }], { compress: 1 });
             const result = await updateImageGroup(id, resultImage.uri, token, item);
+            //const result = await updateImageGroup(id, file.uri, token, item);
             if (result && result.success)
                 return result
         }

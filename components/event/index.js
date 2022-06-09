@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Dimensions, Platform, TouchableOpacity, ScrollView, Button, Alert, LogBox } from 'react-native';
 import Datetimepicker from "@react-native-community/datetimepicker";
-import api from "../../utils/api";
+import {postEvent} from "../../utils/api";
 import GlobalContext from "../global/context";
 import Loading from "../loading/Loading";
 /* import SearchLocation from "./map";
@@ -101,6 +101,7 @@ export default function Index({ navigation, group }) {
         return true;
     }
     const sumbitForm = async () => {
+        console.log('CLICK')
         if (isValidForm()) {
             setLoading(true);
             try {
@@ -119,7 +120,7 @@ export default function Index({ navigation, group }) {
                     group_id: group._id,
                     token: authData.token
                 }
-                const result = await api.postEvent(data);
+                const result = await postEvent(data)
                 if (result && result.success) {
                     setEvent({
                         title: '',

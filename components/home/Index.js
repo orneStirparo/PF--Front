@@ -64,11 +64,11 @@ export default function index({ navigation }) {
             {
                 user.groups_created.length > 0 ?
                     <>
-                        <HeaderAdmin navigation={navigation} title={'PF'} nameIcon={'notifications-circle-outline'} onPress={onPress} />
+                        <HeaderAdmin navigation={navigation} title={`Bienvenido ${authData.name.substr(0, 7).trim()}...`} nameIcon={'notifications-circle-outline'} onPress={onPress} />
                     </>
                     :
                     <>
-                        <HeaderUser title={'PF'} />
+                        <HeaderUser title={`Bienvenido ${authData.name.substr(0, 7).trim()}...`} />
                     </>
             }
             <ScrollView refreshControl={<RefreshControl refreshing={false} onRefresh={onRefreshData} />}>

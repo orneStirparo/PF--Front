@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Alert, Button, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import GlobalContext from "../components/global/context";
 import { loginGoogle, login } from "../utils/api";
 import Loading from "../components/loading/Loading";
@@ -7,7 +7,6 @@ import InpuText from "../components/TextInput/Index";
 import BtnNext from "../components/Buttom/Index";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
-//import * as Google from 'expo-google-app-auth';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -39,21 +38,6 @@ export default function LoginScreen({ navigation }) {
             setAccessToken(response.authentication.accessToken);
         }
     }, [response]);
-
-    /* const signInWithGoogleAsync = async () => {
-        console.log('iniciamos nuestro logueo');
-        try {
-            const config = {
-                ClientId: '470761793482-f3r25b4vle8a88muoc7h4s6v45f6e06m.apps.googleusercontent.com',
-                androidClientId: '470761793482-l16dgpqj6bi7r7fq63lgeonaf58gmbu5.apps.googleusercontent.com',
-            }
-            const result = await Google.logInAsync(config);
-            console.log(result);
-            setAccessToken(result.accessToken);
-        } catch (error) {
-            console.log("Error: ", error);
-        }
-    } */
 
     useEffect(async () => {
         if (accessToken) {
@@ -196,7 +180,7 @@ export default function LoginScreen({ navigation }) {
                     <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0088ff', alignSelf: 'center', marginBottom: 10 }}>or</Text>
                     <TouchableOpacity
                         onPress={() => { promptAsync({ showInRecents: true }) }}
-                        /* onPress={signInWithGoogleAsync} */
+                    /* onPress={signInWithGoogleAsync} */
                     >
                         <Image source={require('../assets/btn_google_signin.png')} style={styles.google} />
                     </TouchableOpacity>

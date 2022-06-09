@@ -16,7 +16,7 @@ export default function Options({ navigation, group, value, eventId, onRefresh }
             Alert.alert('El grupo no posee número de whatsapp');
             return;
         } else {
-            Linking.openURL('https://api.whatsapp.com/send?phone=' + group.whatsApp + '&text=Hola,%20quiero%20saber%20mas%20sobre%20el%20grupo%20' + group.nameAvatar + '.%20Te%20encontre%20en%20HANUKA.');
+            Linking.openURL('https://api.whatsapp.com/send?phone=' + group.whatsApp + '&text=Hola,%20quiero%20saber%20mas%20sobre%20el%20grupo%20' + group.nameAvatar + '.%20Te%20encontre%20en%20la%20ORT%20Belgrano.');
         }
     }
 

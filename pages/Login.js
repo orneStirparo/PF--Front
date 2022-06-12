@@ -24,7 +24,7 @@ export default function LoginScreen({ navigation }) {
     const { authData, applyAuthentication } = useContext(GlobalContext);
     const [accessToken, setAccessToken] = useState();
     const [request, response, promptAsync] = Google.useAuthRequest({
-        androidClientId: "350934348883-r4fa3j6jdvhrffqu2lc8dp0fdng84dvs.apps.googleusercontent.com",
+        androidClientId: "350934348883-msanvqda87og3fs6hkhbi45gouiln9nh.apps.googleusercontent.com",
         iosClientId: "350934348883-5uooanu5p5he0fdh6d69egovcv72glch.apps.googleusercontent.com",
         expoClientId: "350934348883-r4fa3j6jdvhrffqu2lc8dp0fdng84dvs.apps.googleusercontent.com",
     });

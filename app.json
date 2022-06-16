@@ -1,8 +1,8 @@
 {
   "expo": {
     "scheme": "exp",
-    "name": "PF",
-    "slug": "PF",
+    "name": "ProyectoFinal",
+    "slug": "proyectofinal",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -30,6 +30,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

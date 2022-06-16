@@ -163,7 +163,7 @@ export default function CreateGroupScreeen({ navigation }) {
           <InpuText label={'Whatsapp'} placeholder="ejemplo: 5491136254985" value={whatsapp} autoCapitalize="words"
             onChangeText={(value) => handleOnChangeText(value, 'whatsapp')} keyboardType='numeric' />
 
-          <InpuText label={'Instagram'} placeholder="nombre de usuario ejemplo: hanuka.ar" value={instagram} autoCapitalize="none"
+          <InpuText label={'Instagram'} placeholder="nombre de usuario ejemplo: infobae" value={instagram} autoCapitalize="none"
             onChangeText={(value) => handleOnChangeText(value, 'instagram')} />
 
           <BtnNext activeOpacity={0.8} title="Crear Grupo" onPress={() => sumbitForm()} />

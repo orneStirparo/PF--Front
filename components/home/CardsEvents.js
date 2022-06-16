@@ -129,7 +129,7 @@ export default function CardsEvents({ navigation, data, authData, value }) {
                                         <View style={{ marginLeft: 10, position: 'absolute' }}>
                                             <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{item.event.title}</Text>
                                             <Text style={{ color: '#636363', fontSize: 13, fontStyle: 'italic' }}>Cuando: {item.event.date}</Text>
-                                            <Text style={{ color: '#636363', fontSize: 13, fontStyle: 'italic' }}>Donde: {item.event.namePlace.substr(0, 20).trim()}...</Text>
+                                            <Text style={{ color: '#636363', fontSize: 13, fontStyle: 'italic' }}>Donde: {item.event.lugar.substr(0, 20).trim()}...</Text>
                                             <Text style={{ color: '#636363', fontSize: 13, fontStyle: 'italic' }}>Hora: {item.event.time}</Text>
                                             <Text style={{ color: '#636363', fontSize: 13, fontStyle: 'italic' }}>Descripción: {item.event.description.substr(0, 2).trim()}...</Text>
                                         </View>
